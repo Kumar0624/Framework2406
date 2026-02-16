@@ -2,19 +2,19 @@ import { Page, Locator, expect } from '@playwright/test';
 
 export class BasePage {
     
-    constructor(public page: Page, public context: any) { }
+    constructor(public page: Page) { }
 
-    async navigate(url: string) {
-        await this.page.goto(url);
-    }
+    // async navigate(url: string) {
+    //     await this.page.goto(url);
+    // }
 
-    async clickElement(locator: Locator) {
-        await locator.click();
-    }
+    // async clickElement(locator: Locator) {
+    //     await locator.click();
+    // }
 
-    async fill(locator: Locator, value: string) {
-        await locator.fill(value);
-    }
+    // async fill(locator: Locator, value: string) {
+    //     await locator.fill(value);
+    // }
 
     async fillAndEnter(locator: Locator, value: string) {
         await locator.fill(value);
@@ -113,11 +113,9 @@ export class BasePage {
         await expect(locator).toBeChecked();
     }
     async click(locator: Locator) {
-        await locator.scrollIntoViewIfNeeded();
         await locator.waitFor({ state: 'visible' });
         await locator.click();
     }
-
 
 }
 

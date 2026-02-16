@@ -2,13 +2,14 @@ import { test as baseTest } from '@playwright/test';
 import { LoginPage } from '../pages/loginpage';
 
 type myFixtures = {
-    lopfix: LoginPage; // we need to mention the type 
+    loginfix: LoginPage; // we need to mention the type   
 };
 // lopfix will hold page fixture as well as the object created for LoginPage
 export const test = baseTest.extend<myFixtures>({
-    
-    lopfix: async ({ page }, use) => {
+
+    loginfix: async ({ page, context }, use) => {
         const lopobj = new LoginPage(page);
         await use(lopobj);
     }
+
 });

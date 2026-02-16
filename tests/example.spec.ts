@@ -1,12 +1,27 @@
 import { test } from '../fixtures/customFixture';
+import testData from '../test-data/testdata.json'
 
-test('has title', async ({ lopfix , page }) => {
-  await page.goto('https://playwright.dev/');
-  await lopfix.clickHomepage();
+test('Login Test', async ({ loginfix, page }) => {
+  await loginfix.launchUrl("https://app.playonereal.com/agent-signup")
+  await loginfix.enterFirstName(testData.FIRSTNAME)
+  await loginfix.enterLastName(testData.LASTNAME)
+  await loginfix.enterUserName(testData.USERNAME)
+  await loginfix.enterEmailId(testData.EMAIL)
+  await loginfix.enterPassword(testData.PASSWORD)
+  await loginfix.enterConfirmPassword(testData.PASSWORD)
+  await loginfix.clickConsentOne()
+  await loginfix.clickConsentTwo()
+  await loginfix.takeScreenShot("loginPage")
+  await page.waitForTimeout(10000)
 });
 
 
 
-test.skip('get started link', async ({ page }) => {
-await page.goto('https://playwright.dev/');
-});
+
+
+
+
+
+
+
+

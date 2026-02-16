@@ -1,6 +1,8 @@
  {
-    "NUMBER": "1234567890",
-    "USERNAME": "admin",
-    "PASSWORD": "admin123",
+    "FIRSTNAME": "Kumar",
+    "LASTNAME": "M",
+    "USERNAME": "kumar24061997",
+    "EMAIL": "kumar24061997@gmail.com",
+    "PASSWORD": "Kumar@24061998",
     "DOB": "1998-06-24"
 }
