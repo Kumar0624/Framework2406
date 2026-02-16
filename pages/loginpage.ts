@@ -2,14 +2,12 @@ import { Page } from "@playwright/test";
 import { BasePage } from "../helpers/playwright";
 
 export class LoginPage extends BasePage {
-    constructor(page: Page) {
-        super(page);    
-    }   
 
-   
-    private leadsButton =`//a[text()="Leads"]`
-  
+    private getUserNameField() {
+        return this.page.getByPlaceholder('Email');
+    }
+
     async clickHomepage() {
-        this.click(await this.getBy('role','button',{name:this.leadsButton}))
+        await this.click(this.getUserNameField());
     }
 }
