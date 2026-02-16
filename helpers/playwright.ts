@@ -8,7 +8,7 @@ export class BasePage {
         await this.page.goto(url);
     }
 
-    async click(locator: Locator) {
+    async clickElement(locator: Locator) {
         await locator.click();
     }
 
@@ -112,9 +112,15 @@ export class BasePage {
     async verifyChecked(locator: Locator) {
         await expect(locator).toBeChecked();
     }
+    async click(locator: Locator) {
+        await locator.scrollIntoViewIfNeeded();
+        await locator.waitFor({ state: 'visible' });
+        await locator.click();
+    }
+
 
 }
 
 
-
+    
 
