@@ -2,6 +2,9 @@ import { test } from '../fixtures/customFixture';
 import testData from '../test-data/testdata.json'
 
 test('Login Test', async ({ loginfix, page }) => {
+
+  // const log = new LoginPage(page);
+
   await loginfix.launchUrl("https://app.playonereal.com/agent-signup")
   await loginfix.enterFirstName(testData.FIRSTNAME)
   await loginfix.enterLastName(testData.LASTNAME)
