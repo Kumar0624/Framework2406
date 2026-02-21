@@ -8,6 +8,7 @@ test(`Handling Multiple pages`, async ({ page, context }) => {
     await searchBox.press("Enter");
     // await page.waitForTimeout(2000)
     console.log(`Current Page Title is : ${await page.title()}`);
+
     const mobilePriceList = page.locator(`//div[@id="container"]//div[@class="hZ3P6w DeU9vF"]`)
     const allPriceList = await mobilePriceList.count()
     console.log("Price List Count",allPriceList);
@@ -16,11 +17,22 @@ test(`Handling Multiple pages`, async ({ page, context }) => {
         console.log(`Mobile Value is : ${printPrice}`);
     }
     
+     await page.getByRole('link', { name: 'POCO C71 (Desert Gold, 64 GB)' }).click();
 
-    const product = page.locator(`//div[contains(text(),"POCO M6 Plus 5G (Graphite Black, 128 GB")]`)
+    //const product = page.locator(`//div[contains(text(),"POCO M6 Plus 5G (Graphite Black, 128 GB")]`)
 
-    const price = await product.locator
+    //const price = await product.locator
 
+
+
+    //const mobilePriceList =  page.locator(`//div[@id="container"]//div[@class="hZ3P6w DeU9vF"]`)
+
+    // const allPriceList = await mobilePriceList.count()
+
+    // console.log("Price List Count",allPriceList);
+    
+   
+   
 
     //console.log("The mobile Amount is :" + mobileAmount)
 
