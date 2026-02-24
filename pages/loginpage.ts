@@ -1,5 +1,6 @@
 import { Page, Locator } from "@playwright/test";
 import { BaseDemo } from "../helpers/basic";
+import { credentials } from '../constants/credentials'
 
 export class LoginPage extends BaseDemo {
     // locators
@@ -27,6 +28,13 @@ export class LoginPage extends BaseDemo {
     }
 
     // Actions 
+
+    public async adminlogin() {
+        await this.fillElement(this.firstNameInput, credentials.ADMINLOGIN.username)
+        await this.fillElement(this.lastNameInput, credentials.ADMINLOGIN.password)
+    }
+
+
     async enterFirstName(firstName: string) {
         await this.fillElement(this.firstNameInput, firstName)
     }

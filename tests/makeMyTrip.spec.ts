@@ -17,6 +17,7 @@ test('test make my trip', async ({ page }) => {
   await page.locator('.commonModal__close')
     .click({ timeout: 4000 })
     .catch(() => { });
+    
   await page.getByRole('link', { name: 'Flights', exact: true }).click()
   await expect(page).toHaveURL("https://www.makemytrip.com/flights/");
   await page.getByRole('img', { name: 'minimize' })

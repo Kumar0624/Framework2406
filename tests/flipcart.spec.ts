@@ -10,6 +10,8 @@ test(`Handling Multiple pages`, async ({ page, context }) => {
   // .catch() catches error
   // Empty function runs
   // Test continues without failing
+
+  await page.pause()
   await page.getByRole('button', { name: '✕' })
     .click({ timeout: 3000 })
     .catch(() => { });
@@ -31,7 +33,7 @@ test(`Handling Multiple pages`, async ({ page, context }) => {
   }
  
   // to print & select Particular Mobile 
-  const selectedMobile = page.locator(`(//div[@data-id="MOBHAFVJZ5CHWMH8"]//div[contains(text(),'₹')])[1]`);
+  const selectedMobile = page.locator(`//div[@data-id="MOBHAFVJZ5CHWMH8"]//div[contains(@class,'hZ3P6w DeU9vF')]`);
   const actualRate = await selectedMobile.innerText()
   console.log(`Selected Mobile Price : ${actualRate}`);
 
@@ -50,5 +52,8 @@ test(`Handling Multiple pages`, async ({ page, context }) => {
   console.log(`Total number of pages opened are: ${allpages.length}`) // to get the total number of pages opened.
   console.log(`The title of the parent page is: ${await allpages[0].title()}`) //
   console.log(`The title of the child page is: ${await allpages[1].title()}`); // 
+
+  await newpage.title()
+  await page.title()
   await page.pause()
 })
