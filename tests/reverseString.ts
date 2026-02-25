@@ -1,17 +1,17 @@
 
 
-let str = "hello World";
+// let str = "hello World";
 
-let reversed = str.split("").reverse().join(""); // reverse a string 
-console.log(reversed);
-
-
-let sorted = str.split("").sort().join("")  // ascending
-console.log(sorted);
+// let reversed = str.split("").reverse().join(""); // reverse a string 
+// console.log(reversed);
 
 
-let reverse_sorted = str.split("").sort().reverse().join("")  // decending
-console.log(reverse_sorted);
+// let sorted = str.split("").sort().join("")  // ascending
+// console.log(sorted);
+
+
+// let reverse_sorted = str.split("").sort().reverse().join("")  // decending
+// console.log(reverse_sorted);
 
 
 // // Step 1: split("")

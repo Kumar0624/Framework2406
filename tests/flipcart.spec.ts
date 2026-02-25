@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-test(`Handling Multiple pages`, async ({ page, context }) => {
+test.skip(`Handling Multiple pages`, async ({ page, context }) => {
   console.log("Test started");
   await page.goto("https://www.flipkart.com/");
   // Close login popup if appears

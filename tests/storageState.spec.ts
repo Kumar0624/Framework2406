@@ -1,5 +1,4 @@
 import { test } from '../fixtures/customFixture'
-
 import { ENV } from '../constants/urlConstants'
 import { credentials } from '../constants/credentials'
 
