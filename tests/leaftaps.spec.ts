@@ -3,7 +3,7 @@ import { ENV } from '../constants/urlConstants'
 import { expect } from '@playwright/test'
 import { log } from 'console'
 
-test.use({storageState:'tests\Data\login_leaf.json'})
+test.use({storageState:'login_leaf.json'})
 
 test('Use Storage State', async({leafLog,page}) => {
     await leafLog.launchUrl(ENV.LEAF_MAINPAGE)
