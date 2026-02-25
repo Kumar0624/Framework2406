@@ -8,7 +8,7 @@ import{test, expect} from '@playwright/test'
 // Test continues without failing
 
 
-test.skip('test make my trip', async ({ page }) => {
+test('test make my trip', async ({ page }) => {
 
   await page.goto('https://www.makemytrip.com/');
   await page.getByRole('img', { name: 'minimize' })
