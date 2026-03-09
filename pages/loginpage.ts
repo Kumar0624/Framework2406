@@ -36,30 +36,39 @@ export class LoginPage extends BaseDemo {
 
 
     async enterFirstName(firstName: string) {
-        await this.fillElement(this.firstNameInput, firstName)
+        try {
+            await this.fillElement(this.firstNameInput, firstName)
+        } catch (error) {
+            throw new Error(`Unable to fill the FirstName Field. Reason: ${error}`)
+        }
     }
-    async enterLastName(lastName: string){
-        await this.fillElement(this.lastNameInput,lastName)
+    async enterLastName(lastName: string) {
+        try {
+            await this.fillElement(this.lastNameInput, lastName)
+        } catch (error) {
+            throw new Error(`Unable to fill the LastName Field. Reason : ${error}`)
+        }
     }
-    async enterUserName(userName: string){
-        await this.fillElement(this.userNameInput,userName)
+    
+    async enterUserName(userName: string) {
+        await this.fillElement(this.userNameInput, userName)
     }
-    async enterEmailId(emailId: string){
-        await this.fillElement(this.emailInput,emailId)
+    async enterEmailId(emailId: string) {
+        await this.fillElement(this.emailInput, emailId)
     }
-    async enterPassword(password: string){
-        await this.fillElement(this.passwordInput,password)
+    async enterPassword(password: string) {
+        await this.fillElement(this.passwordInput, password)
     }
-    async enterConfirmPassword(confirmPassword: string){
-        await this.fillElement(this.confirmPasswordInput,confirmPassword)
+    async enterConfirmPassword(confirmPassword: string) {
+        await this.fillElement(this.confirmPasswordInput, confirmPassword)
     }
-    async clickConsentOne(){
+    async clickConsentOne() {
         await this.consentOne.check()
     }
-    async clickConsentTwo(){
+    async clickConsentTwo() {
         await this.consentTwo.check()
     }
-    async clickConfirmButton(){
+    async clickConfirmButton() {
         await this.clickElement(this.confirmButton)
     }
 }

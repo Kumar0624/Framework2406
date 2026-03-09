@@ -1,6 +1,6 @@
-import { test } from '../fixtures/customFixture'
-import { ENV } from '../constants/urlConstants'
-import { credentials } from '../constants/credentials'
+import { test } from '../../fixtures/customFixture'
+import { ENV } from '../../constants/urlConstants'
+import { credentials } from '../../constants/credentials'
 
 
 test('Store leaf login', async ({ leafLog, page }) => {

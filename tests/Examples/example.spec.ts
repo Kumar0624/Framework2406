@@ -1,6 +1,6 @@
-import { test } from '../fixtures/customFixture';
-import testData from '../test-data/testdata.json';
-import { ENV } from '../constants/urlConstants'
+import { test } from '../../fixtures/customFixture';
+import testData from '../../test-data/testdata.json';
+import { ENV } from '../../constants/urlConstants'
 
 test('Login Test', async ({ loginfix, page }) => {
   // const log = new LoginPage(page);
@@ -13,7 +13,6 @@ test('Login Test', async ({ loginfix, page }) => {
   await loginfix.enterConfirmPassword(testData.PASSWORD)
   await loginfix.clickConsentOne()
   await loginfix.clickConsentTwo()
-  
   await loginfix.takeScreenShot("loginPage")
   await page.waitForTimeout(100)
 });
@@ -21,7 +20,6 @@ test('Login Test', async ({ loginfix, page }) => {
 test('Login Test2', async ({ loginfix, page }) => {
 
   // const log = new LoginPage(page);
-
   await loginfix.launchUrl(ENV.PROD)
   await loginfix.enterFirstName(testData.FIRSTNAME)
   await loginfix.enterLastName(testData.LASTNAME)
@@ -31,7 +29,6 @@ test('Login Test2', async ({ loginfix, page }) => {
   await loginfix.enterConfirmPassword(testData.PASSWORD)
   await loginfix.clickConsentOne()
   await loginfix.clickConsentTwo()
-  
   await loginfix.takeScreenShot("loginPage")
   await page.waitForTimeout(1000)
 });
